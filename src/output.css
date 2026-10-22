@@ -41,6 +41,7 @@
     --spacing: 0.25rem;
     --container-sm: 24rem;
     --container-md: 28rem;
+    --container-lg: 32rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
@@ -548,6 +549,9 @@
   }
   .max-w-7xl {
     max-width: var(--container-7xl);
+  }
+  .max-w-lg {
+    max-width: var(--container-lg);
   }
   .max-w-md {
     max-width: var(--container-md);
@@ -1432,6 +1436,14 @@
     .hover\:bg-cyan-400:hover {
       background-color: var(--color-cyan-400);
     }
+    .hover\:bg-cyan-400\/10:hover {
+      background-color: color-mix(in srgb, oklch(78.9% 0.154 211.53) 10%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-cyan-400\/10:hover {
+        background-color: color-mix(in oklab, var(--color-cyan-400) 10%, transparent);
+      }
+    }
     .hover\:bg-slate-900:hover {
       background-color: var(--color-slate-900);
     }
@@ -1721,11 +1733,17 @@
     .lg\:h-\[420px\] {
       height: 420px;
     }
+    .lg\:max-w-lg {
+      max-width: var(--container-lg);
+    }
     .lg\:max-w-md {
       max-width: var(--container-md);
     }
     .lg\:max-w-none {
       max-width: none;
+    }
+    .lg\:max-w-xl {
+      max-width: var(--container-xl);
     }
     .lg\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
