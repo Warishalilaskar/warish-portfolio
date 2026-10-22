@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+  <link href="./src/output.css" rel="stylesheet">
+  
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .portfolio-motion-ready .portfolio-reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.8s ease,
+                    transform 0.8s ease;
+    }
+
+    .portfolio-motion-ready .portfolio-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .portfolio-card-hover {
+        transition: transform 0.35s ease,
+                    border-color 0.35s ease,
+                    box-shadow 0.35s ease;
+    }
+
+    @media (hover: hover) {
+        .portfolio-card-hover:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 181, 226, 0.55);
+        }
+    }
+
+    .portfolio-interactive {
+        transition: all 0.3s ease;
+    }
+
+    .portfolio-navbar-animate {
+        animation: navbarEntrance 0.8s ease-out both;
+    }
+
+    @keyframes navbarEntrance {
+        from {
+            opacity: 0;
+            transform: translateY(-14px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .portfolio-motion-ready .portfolio-reveal {
+            opacity: 1;
+            transform: none;
+        }
+    }
+</style>
+
+</head>
+<body>
+  
+<!-- NAVBAR -->
+
+<header class="sticky top-0 z-50 border-b border-slate-800 bg-slate-950">
+    <nav class="relative mx-auto flex min-h-[76px] max-w-7xl items-center justify-between gap-6 px-5 py-3 md:px-8 lg:px-10">
+
+        <!-- LOGO -->
+        <a href="#home" class="shrink-0 text-xl font-extrabold tracking-tight md:text-2xl">
+            <span class="text-cyan-400">WARISH</span>
+            <span class="text-white">ALI LASKAR</span>
+        </a>
+
+        <!-- DESKTOP MENU -->
+        <ul class="hidden items-center gap-8 text-lg font-bold md:flex">
+            <li><a href="#home" class="inline-block font-extrabold text-cyan-400 transition-colors duration-300 hover:text-cyan-300">HOME</a></li>
+            <li><a href="#about" class="text-white transition hover:text-cyan-400">ABOUT</a></li>
+            <li><a href="#skills" class="text-white transition hover:text-cyan-400">SKILLS</a></li>
+            <li><a href="#projects" class="text-white transition hover:text-cyan-400">PROJECTS</a></li>
+            <li><a href="#services" class="text-white transition hover:text-cyan-400">SERVICES</a></li>
+            <li><a href="#contact" class="text-white transition hover:text-cyan-400">CONTACT</a></li>
+        </ul>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            id="menu-btn"
+            type="button"
+            class="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-700 text-cyan-400 transition hover:border-cyan-400 md:hidden"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu">
+
+            <!-- Hamburger Icon -->
+            <svg id="menu-open-icon" xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+
+            <!-- Close Icon -->
+            <svg id="menu-close-icon" xmlns="http://www.w3.org/2000/svg"
+                class="hidden h-7 w-7" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+        </button>
+
+        <!-- MOBILE DROPDOWN MENU -->
+        <ul id="mobile-menu"
+            class="absolute left-0 right-0 top-full hidden flex-col gap-1 border-b border-slate-800 bg-slate-950 px-5 py-3 shadow-xl md:hidden">
+
+            <li><a href="#home" class="block rounded-lg px-4 py-3 font-bold text-cyan-400 hover:bg-slate-900">HOME</a></li>
+            <li><a href="#about" class="block rounded-lg px-4 py-3 font-bold text-white hover:bg-slate-900 hover:text-cyan-400">ABOUT</a></li>
+            <li><a href="#skills" class="block rounded-lg px-4 py-3 font-bold text-white hover:bg-slate-900 hover:text-cyan-400">SKILLS</a></li>
+            <li><a href="#projects" class="block rounded-lg px-4 py-3 font-bold text-white hover:bg-slate-900 hover:text-cyan-400">PROJECTS</a></li>
+            <li><a href="#services" class="block rounded-lg px-4 py-3 font-bold text-white hover:bg-slate-900 hover:text-cyan-400">SERVICES</a></li>
+            <li><a href="#contact" class="block rounded-lg px-4 py-3 font-bold text-white hover:bg-slate-900 hover:text-cyan-400">CONTACT</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+
+
+
+
+<!-- HERO SECTION START-->
+<section id="home"
+  class="relative isolate overflow-hidden bg-[#03111f] text-white">
+
+  <!-- Background Glow -->
+  <div class="pointer-events-none absolute -left-32 top-20 -z-10 h-80 w-80 rounded-full bg-cyan-500/10 blur-[100px]"></div>
+  <div class="pointer-events-none absolute right-0 top-20 -z-10 h-96 w-96 rounded-full bg-blue-500/10 blur-[120px]"></div>
+
+  <div class="mx-auto grid min-h-[calc(100vh-76px)] max-w-7xl items-center gap-12 px-5 py-16 md:px-8 lg:grid-cols-2 lg:gap-10 lg:px-10">
+
+    <!-- LEFT CONTENT -->
+    <div class="order-2 lg:order-1">
+
+      <!-- Fresher Badge -->
+      <div class="mb-6 inline-flex items-center gap-3 rounded-full border border-cyan-400/50 bg-cyan-400/5 px-4 py-2 text-sm font-semibold text-cyan-300">
+        <span class="text-lg">&lt;/&gt;</span>
+        Fresher Frontend Developer
+      </div>
+
+      <!-- Introduction -->
+      <p class="mb-3 text-xl text-slate-300 sm:text-2xl">
+        Hi, I'm
+        <span class="font-bold text-cyan-400">Warish Ali Laskar</span>
+      </p>
+
+      <!-- Main Heading -->
+      <h1 class="max-w-2xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl xl:text-6xl">
+        Aspiring Frontend Developer
+        <span class="mt-2 block text-cyan-400">
+          Building for the Web.
+        </span>
+      </h1>
+
+      <!-- Description -->
+      <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+        I'm a fresher frontend developer passionate about creating
+        clean, responsive and user-friendly websites. I'm building
+        real-world projects with HTML, CSS, JavaScript and Tailwind CSS
+        while continuously improving my skills.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="mt-8 flex flex-wrap gap-4">
+
+        <a href="#projects"
+          class="inline-flex items-center justify-center gap-3 rounded-full bg-cyan-400 px-7 py-3.5 font-bold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-300">
+          View My Projects
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <a href="#contact"
+          class="inline-flex items-center justify-center gap-3 rounded-full border border-cyan-400 px-7 py-3.5 font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-cyan-400 hover:text-slate-950">
+          Contact Me
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+
+      <!-- Skills -->
+      <div class="mt-10 border-t border-slate-700/80 pt-6">
+
+        <p class="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+          Technologies I Work With
+        </p>
+
+        <div class="flex flex-wrap gap-3">
+          <span class="rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-medium text-slate-200">
+            HTML
+          </span>
+
+          <span class="rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-medium text-slate-200">
+            CSS
+          </span>
+
+          <span class="rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-medium text-slate-200">
+            JavaScript
+          </span>
+
+          <span class="rounded-lg border border-slate-700 bg-slate-900/70 px-4 py-2 text-sm font-medium text-slate-200">
+            Tailwind CSS
+          </span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="relative order-1 mx-auto flex w-full max-w-sm items-center justify-center lg:order-2 lg:max-w-md">
+
+      <!-- Glow -->
+      <div class="absolute h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl sm:h-80 sm:w-80"></div>
+
+      <!-- Circular Image Frame -->
+      <div class="relative aspect-square w-full rounded-full border border-cyan-400/40 bg-gradient-to-br from-cyan-400/20 via-blue-500/10 to-slate-900 p-3 shadow-2xl shadow-cyan-500/10">
+
+        <div class="absolute inset-3 rounded-full border border-cyan-300/20"></div>
+
+        <img
+          src="/image/hero-image.jpg"
+          alt="Warish Ali Laskar"
+          class="h-full w-full rounded-full object-cover object-center"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+
+        <!-- Fallback if photo is not added yet -->
+        <div style="display:none"
+          class="absolute inset-3 items-center justify-center rounded-full bg-slate-900 text-center">
+          <div>
+            <span class="text-6xl font-extrabold text-cyan-400">WAL</span>
+            <p class="mt-3 text-sm text-slate-300">
+              Frontend Developer
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Floating Label -->
+      <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-xl border border-slate-700 bg-slate-900/95 px-5 py-3 shadow-xl sm:bottom-5 sm:left-0 sm:translate-x-0">
+        <p class="text-xs text-slate-400">Currently focused on</p>
+        <p class="mt-1 font-bold text-cyan-400">
+          Learning & Building Projects
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- HERO SECTION START-->
+
+
+
+<!-- ABOUT ME SECTION START -->
+<section id="about" class="relative overflow-hidden bg-[#061321] py-20 text-white md:py-24">
+
+  <!-- Background Glow -->
+  <div class="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[100px]"></div>
+  <div class="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-blue-500/10 blur-[100px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
+
+    <!-- Section Heading: Left Aligned -->
+    <div class="mb-12 text-left md:mb-16">
+
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-cyan-400">
+        Get To Know Me
+      </p>
+
+      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+        About <span class="text-cyan-400">Me</span>
+      </h2>
+
+      <div class="mt-5 h-1 w-16 rounded-full bg-cyan-400"></div>
+
+      <p class="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+        A little introduction about me, my journey, and my passion for web development.
+      </p>
+
+    </div>
+
+    <!-- Main Content Grid -->
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+
+      <!-- Left: About Card -->
+      <div class="relative">
+
+        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-br from-cyan-400/20 to-blue-500/5 blur-sm"></div>
+
+        <div class="relative rounded-3xl border border-slate-700/80 bg-[#0a1b2d] p-6 sm:p-8 md:p-10">
+
+          <!-- Code Icon -->
+          <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-400/30 bg-cyan-400/10 text-xl font-extrabold text-cyan-400">
+            &lt;/&gt;
+          </div>
+
+          <h3 class="text-2xl font-bold leading-snug sm:text-3xl">
+            Passionate About
+            <span class="text-cyan-400">Web Development</span>
+          </h3>
+
+          <p class="mt-5 leading-8 text-slate-300">
+            Hello! I'm Warish Ali Laskar, a fresher frontend developer
+            who enjoys building modern, responsive, and user-friendly
+            websites.
+          </p>
+
+          <p class="mt-4 leading-8 text-slate-300">
+            I'm developing my skills in HTML, CSS, JavaScript, and
+            Tailwind CSS through practical projects. I'm eager to
+            learn new technologies and improve my development skills
+            step by step.
+          </p>
+
+          <!-- Project Button -->
+          <a href="#projects"
+             class="mt-7 inline-flex items-center gap-3 rounded-lg border border-cyan-400/40 bg-cyan-400/10 px-5 py-3 font-bold text-cyan-400 transition duration-300 hover:bg-cyan-400 hover:text-slate-950">
+            Explore My Projects
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Right: Highlight Cards -->
+      <div class="grid gap-5 sm:grid-cols-2">
+
+        <!-- Card 1 -->
+        <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/5">
+
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-2xl text-cyan-400 transition group-hover:bg-cyan-400 group-hover:text-slate-950">
+            ◈
+          </div>
+
+          <h3 class="text-lg font-bold">Responsive Design</h3>
+
+          <p class="mt-3 text-sm leading-7 text-slate-400">
+            Creating layouts that adapt to mobile, tablet, and desktop screens.
+          </p>
+
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/5">
+
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-2xl text-cyan-400 transition group-hover:bg-cyan-400 group-hover:text-slate-950">
+            ✦
+          </div>
+
+          <h3 class="text-lg font-bold">Clean UI Design</h3>
+
+          <p class="mt-3 text-sm leading-7 text-slate-400">
+            Focusing on clean layouts, readable typography, and consistent spacing.
+          </p>
+
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/5">
+
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-2xl text-cyan-400 transition group-hover:bg-cyan-400 group-hover:text-slate-950">
+            { }
+          </div>
+
+          <h3 class="text-lg font-bold">Continuous Learning</h3>
+
+          <p class="mt-3 text-sm leading-7 text-slate-400">
+            Practising frontend skills and learning through hands-on projects.
+          </p>
+
+        </div>
+
+        <!-- Card 4 -->
+        <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-lg hover:shadow-cyan-500/5">
+
+          <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-2xl text-cyan-400 transition group-hover:bg-cyan-400 group-hover:text-slate-950">
+            ✓
+          </div>
+
+          <h3 class="text-lg font-bold">Project Focused</h3>
+
+          <p class="mt-3 text-sm leading-7 text-slate-400">
+            Applying what I learn by building real websites and practical projects.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ABOUT ME SECTION END -->
+
+
+
+<!-- SKILLS SECTION START -->
+<section id="skills" class="relative overflow-hidden bg-[#03111f] py-20 text-white md:py-24">
+
+  <!-- Background Glow -->
+  <div class="pointer-events-none absolute -left-32 top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[100px]"></div>
+  <div class="pointer-events-none absolute -right-32 bottom-0 h-72 w-72 rounded-full bg-blue-500/10 blur-[100px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
+
+    <!-- Section Heading: Left Aligned -->
+    <div class="mb-12 text-left md:mb-16">
+
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-cyan-400">
+        What I Know
+      </p>
+
+      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+        My <span class="text-cyan-400">Skills</span>
+      </h2>
+
+      <div class="mt-5 h-1 w-16 rounded-full bg-cyan-400"></div>
+
+      <p class="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+        The technologies I'm learning and using to build clean,
+        responsive, and user-friendly websites.
+      </p>
+
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- HTML -->
+      <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/5">
+        <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-orange-500/10 text-2xl font-extrabold text-orange-400">
+          5
+        </div>
+        <h3 class="text-xl font-bold">HTML5</h3>
+        <p class="mt-3 text-sm leading-7 text-slate-400">
+          Building structured and accessible web page layouts.
+        </p>
+        <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-slate-700">
+          <div class="h-full w-4/5 rounded-full bg-cyan-400"></div>
+        </div>
+      </div>
+
+      <!-- CSS -->
+      <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/5">
+        <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-blue-500/10 text-2xl font-extrabold text-blue-400">
+          #
+        </div>
+        <h3 class="text-xl font-bold">CSS3</h3>
+        <p class="mt-3 text-sm leading-7 text-slate-400">
+          Styling pages with layouts, typography, and modern visual effects.
+        </p>
+        <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-slate-700">
+          <div class="h-full w-4/5 rounded-full bg-cyan-400"></div>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/5">
+        <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-yellow-400/10 text-xl font-extrabold text-yellow-400">
+          JS
+        </div>
+        <h3 class="text-xl font-bold">JavaScript</h3>
+        <p class="mt-3 text-sm leading-7 text-slate-400">
+          Learning interactive features, DOM manipulation, and basic logic.
+        </p>
+        <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-slate-700">
+          <div class="h-full w-1/2 rounded-full bg-cyan-400"></div>
+        </div>
+      </div>
+
+      <!-- Tailwind CSS -->
+      <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/5">
+        <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-cyan-400/10 text-xl font-extrabold text-cyan-400">
+          TW
+        </div>
+        <h3 class="text-xl font-bold">Tailwind CSS</h3>
+        <p class="mt-3 text-sm leading-7 text-slate-400">
+          Creating responsive designs using utility-first CSS classes.
+        </p>
+        <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-slate-700">
+          <div class="h-full w-3/4 rounded-full bg-cyan-400"></div>
+        </div>
+      </div>
+
+      <!-- Bootstrap -->
+      <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/5">
+        <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-purple-500/10 text-xl font-extrabold text-purple-400">
+          B
+        </div>
+        <h3 class="text-xl font-bold">Bootstrap</h3>
+        <p class="mt-3 text-sm leading-7 text-slate-400">
+          Using ready-made components and responsive grid layouts.
+        </p>
+        <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-slate-700">
+          <div class="h-full w-3/5 rounded-full bg-cyan-400"></div>
+        </div>
+      </div>
+
+      <!-- Git & GitHub -->
+      <div class="group rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/5">
+        <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-slate-500/10 text-2xl font-extrabold text-slate-300">
+          G
+        </div>
+        <h3 class="text-xl font-bold">Git & GitHub</h3>
+        <p class="mt-3 text-sm leading-7 text-slate-400">
+          Practising version control and publishing projects online.
+        </p>
+        <div class="mt-5 h-1.5 overflow-hidden rounded-full bg-slate-700">
+          <div class="h-full w-1/2 rounded-full bg-cyan-400"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Note -->
+    <p class="mt-8 text-left text-sm text-slate-500">
+      Continuously learning, practising, and improving my frontend skills.
+    </p>
+
+  </div>
+</section>
+<!-- SKILLS SECTION END -->
+
+
+
+
+
+<!-- PROJECTS SECTION START -->
+<section id="projects" class="relative overflow-hidden bg-[#061321] py-20 text-white md:py-24">
+
+  <!-- Background Glow -->
+  <div class="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[100px]"></div>
+  <div class="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-blue-500/10 blur-[100px]"></div>
+
+  <div class="relative mx-auto max-w-7xl px-5 md:px-8 lg:px-10">
+
+    <!-- Section Heading -->
+    <div class="mb-12 text-left md:mb-16">
+      <p class="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-cyan-400">
+        My Recent Work
+      </p>
+
+      <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+        My <span class="text-cyan-400">Projects</span>
+      </h2>
+
+      <div class="mt-5 h-1 w-16 rounded-full bg-cyan-400"></div>
+
+      <p class="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+        Explore my websites, practical projects, and frontend development journey.
+      </p>
+    </div>
+
+    <!-- Responsive Projects Grid -->
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- PROJECT 1: CHAKKA CHAK -->
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-700/80 bg-[#0a1b2d] transition duration-300 hover:-translate-y-2 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/10">
+
+        <!-- Project Preview -->
+        <div class="relative flex h-56 shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-950 via-slate-900 to-[#061321]">
+          <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(#22d3ee 1px,transparent 1px);background-size:22px 22px;"></div>
+
+          <div class="relative text-center transition duration-500 group-hover:scale-105">
+            <div class="mb-3 text-5xl">🚘</div>
+            <h3 class="text-2xl font-black tracking-wide">
+              CHAKKA <span class="text-cyan-400">CHAK</span>
+            </h3>
+            <p class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+              Car & Bike Wash
+            </p>
+          </div>
+
+          <span class="absolute right-4 top-4 rounded-full border border-cyan-400/30 bg-slate-950/70 px-3 py-1 text-xs font-semibold text-cyan-300">
+            Featured
+          </span>
+        </div>
+
+        <!-- Project Details -->
+        <div class="flex flex-1 flex-col p-6">
+          <p class="text-sm font-semibold text-cyan-400">01 / Business Website</p>
+
+          <h3 class="mt-3 text-xl font-bold leading-snug transition group-hover:text-cyan-400 sm:text-2xl">
+            CHAKKA CHAK Car & Bike Wash
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-slate-400">
+            A car and bike washing website with service packages,
+            business information, and contact details in a modern layout.
+          </p>
+
+          <!-- Technologies -->
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">HTML5</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">Tailwind CSS</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">JavaScript</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">Responsive UI</span>
+          </div>
+
+          <!-- Buttons -->
+          <div class="mt-auto flex flex-wrap gap-3 pt-7">
+            <a href="https://warishalilaskar.github.io/CHAKKA-CHAK-CAR-BIKE-WASH/"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-lg bg-cyan-400 px-3 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300">
+              Live Demo <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="https://github.com/Warishalilaskar/CHAKKA-CHAK-CAR-BIKE-WASH"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-lg border border-slate-600 px-3 py-3 text-sm font-bold text-white transition hover:border-cyan-400 hover:text-cyan-400">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2: DSC RESELLER -->
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-700/80 bg-[#0a1b2d] transition duration-300 hover:-translate-y-2 hover:border-emerald-400/60 hover:shadow-xl hover:shadow-emerald-500/10">
+
+        <!-- Project Preview -->
+        <div class="relative flex h-56 shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-emerald-950 via-slate-900 to-[#061321]">
+          <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(#34d399 1px,transparent 1px);background-size:22px 22px;"></div>
+
+          <div class="relative px-4 text-center transition duration-500 group-hover:scale-105">
+            <div class="mb-3 text-5xl">🔐</div>
+            <h3 class="text-2xl font-black">
+              DSC <span class="text-emerald-400">RESELLER</span>
+            </h3>
+            <p class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+              Digital Signature Website
+            </p>
+          </div>
+        </div>
+
+        <!-- Project Details -->
+        <div class="flex flex-1 flex-col p-6">
+          <p class="text-sm font-semibold text-emerald-400">02 / Business Website</p>
+
+          <h3 class="mt-3 text-xl font-bold leading-snug transition group-hover:text-emerald-400 sm:text-2xl">
+            DSC Reseller Website
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-slate-400">
+            A digital signature reseller website featuring product
+            information, downloads, FAQs, updates, and contact details.
+          </p>
+
+          <!-- Technologies -->
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">HTML5</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">Tailwind CSS</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">JavaScript</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">Responsive UI</span>
+          </div>
+
+          <!-- Buttons -->
+          <div class="mt-auto flex flex-wrap gap-3 pt-7">
+            <a href="https://warishalilaskar.github.io/dsc-reseller-website/"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-lg bg-cyan-400 px-3 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300">
+              Live Demo <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="https://github.com/Warishalilaskar/dsc-reseller-website"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-lg border border-slate-600 px-3 py-3 text-sm font-bold text-white transition hover:border-cyan-400 hover:text-cyan-400">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: ALL STAR UNITED CRICKET -->
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-700/80 bg-[#0a1b2d] transition duration-300 hover:-translate-y-2 hover:border-yellow-400/60 hover:shadow-xl hover:shadow-yellow-500/10">
+
+        <!-- Project Preview -->
+        <div class="relative flex h-56 shrink-0 items-center justify-center overflow-hidden bg-gradient-to-br from-amber-950 via-slate-900 to-[#061321]">
+          <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(#facc15 1px,transparent 1px);background-size:22px 22px;"></div>
+
+          <div class="relative px-4 text-center transition duration-500 group-hover:scale-105">
+            <div class="mb-3 text-5xl">🏏</div>
+            <h3 class="text-2xl font-black">
+              ALL STAR <span class="text-yellow-400">UNITED</span>
+            </h3>
+            <p class="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+              Cricket Club Website
+            </p>
+          </div>
+        </div>
+
+        <!-- Project Details -->
+        <div class="flex flex-1 flex-col p-6">
+          <p class="text-sm font-semibold text-yellow-400">03 / Club Website</p>
+
+          <h3 class="mt-3 text-xl font-bold leading-snug transition group-hover:text-yellow-400 sm:text-2xl">
+            All Star United Cricket
+          </h3>
+
+          <p class="mt-4 text-sm leading-7 text-slate-400">
+            A cricket club website showcasing players and management,
+            with Firebase-based member authentication and club finance features.
+          </p>
+
+          <!-- Technologies -->
+          <div class="mt-5 flex flex-wrap gap-2">
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">HTML5</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">Tailwind CSS</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">JavaScript</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">Firebase</span>
+            <span class="rounded-md border border-slate-700 bg-slate-800/70 px-3 py-1.5 text-xs text-slate-300">Responsive UI</span>
+          </div>
+
+          <!-- Buttons -->
+          <div class="mt-auto flex flex-wrap gap-3 pt-7">
+            <a href="https://warishalilaskar.github.io/all-star-united-cricket/"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-lg bg-cyan-400 px-3 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300">
+              Live Demo <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="https://github.com/Warishalilaskar/all-star-united-cricket"
+               target="_blank" rel="noopener noreferrer"
+               class="inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-lg border border-slate-600 px-3 py-3 text-sm font-bold text-white transition hover:border-cyan-400 hover:text-cyan-400">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom Contact CTA -->
+    <div class="mt-14 rounded-2xl border border-cyan-400/20 bg-gradient-to-r from-cyan-400/10 via-[#0a1b2d] to-blue-500/10 px-6 py-8 text-left md:flex md:items-center md:justify-between md:gap-8 md:px-10">
+
+      <div>
+        <h3 class="text-2xl font-bold">
+          Have a project in <span class="text-cyan-400">mind?</span>
+        </h3>
+        <p class="mt-3 max-w-xl leading-7 text-slate-400">
+          Let's connect and discuss how I can help build your website.
+        </p>
+      </div>
+
+      <a href="#contact"
+         class="mt-6 inline-flex items-center justify-center gap-3 rounded-lg bg-cyan-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-cyan-300 md:mt-0">
+        Contact Me <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- PROJECTS SECTION END -->
+
+
+<!-- SERVICES SECTION START -->
+<section id="services" class="relative scroll-mt-24 overflow-hidden bg-slate-950 py-16 text-white md:py-20 lg:py-24">
+
+    <!-- Background Glow -->
+    <div class="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[100px]"></div>
+    <div class="pointer-events-none absolute -left-32 bottom-0 h-72 w-72 rounded-full bg-blue-500/10 blur-[100px]"></div>
+
+    <!-- Same X-axis spacing as Projects Section -->
+    <div class="relative mx-auto w-full max-w-7xl px-5 md:px-8 lg:px-10">
+
+        <!-- SECTION HEADING -->
+        <div class="mb-12 text-left md:mb-16">
+
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.3em] text-cyan-400">
+                WHAT I OFFER
+            </p>
+
+            <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+                My <span class="text-cyan-400">Services</span>
+            </h2>
+
+            <div class="mt-5 h-1 w-16 rounded-full bg-cyan-400"></div>
+
+            <p class="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+                I create modern, responsive and user-friendly websites
+                to help businesses build a strong online presence.
+            </p>
+
+        </div>
+
+        <!-- SERVICES GRID -->
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+            <!-- SERVICE 1 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10 sm:p-7">
+
+                <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-3xl">
+                    💻
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold transition group-hover:text-cyan-400">
+                    Business Website
+                </h3>
+
+                <p class="mb-6 leading-7 text-slate-400">
+                    A professional website to showcase your business,
+                    services and contact details.
+                </p>
+
+                <ul class="mb-8 space-y-3 text-sm text-slate-300">
+                    <li><span class="mr-2 text-cyan-400">✓</span>Modern and clean design</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Mobile-friendly layout</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Contact section</li>
+                </ul>
+
+                <a href="#contact" class="mt-auto block rounded-lg border border-cyan-400 px-4 py-3 text-center font-bold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950">
+                    Discuss Your Project →
+                </a>
+            </article>
+
+            <!-- SERVICE 2 -->
+            <article class="group relative flex flex-col rounded-2xl border border-cyan-400/60 bg-slate-900 p-6 shadow-lg shadow-cyan-500/5 transition duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-cyan-500/10 sm:p-7">
+
+                <span class="absolute right-4 top-4 rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-bold text-cyan-400">
+                    POPULAR
+                </span>
+
+                <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-3xl">
+                    🎨
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold transition group-hover:text-cyan-400">
+                    Landing Page Design
+                </h3>
+
+                <p class="mb-6 leading-7 text-slate-400">
+                    A focused landing page for promoting a product,
+                    service, business or special offer.
+                </p>
+
+                <ul class="mb-8 space-y-3 text-sm text-slate-300">
+                    <li><span class="mr-2 text-cyan-400">✓</span>Attractive hero section</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Call-to-action buttons</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Responsive design</li>
+                </ul>
+
+                <a href="#contact" class="mt-auto block rounded-lg bg-cyan-400 px-4 py-3 text-center font-bold text-slate-950 transition hover:bg-cyan-300">
+                    Discuss Your Project →
+                </a>
+            </article>
+
+            <!-- SERVICE 3 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10 sm:p-7">
+
+                <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-3xl">
+                    📱
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold transition group-hover:text-cyan-400">
+                    Responsive Website
+                </h3>
+
+                <p class="mb-6 leading-7 text-slate-400">
+                    A flexible website layout for mobile phones,
+                    tablets and desktop screens.
+                </p>
+
+                <ul class="mb-8 space-y-3 text-sm text-slate-300">
+                    <li><span class="mr-2 text-cyan-400">✓</span>Mobile-friendly layout</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Flexible content sections</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Cross-screen testing</li>
+                </ul>
+
+                <a href="#contact" class="mt-auto block rounded-lg border border-cyan-400 px-4 py-3 text-center font-bold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950">
+                    Discuss Your Project →
+                </a>
+            </article>
+
+            <!-- SERVICE 4 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10 sm:p-7">
+
+                <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-3xl">
+                    🏢
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold transition group-hover:text-cyan-400">
+                    Multi-Page Website
+                </h3>
+
+                <p class="mb-6 leading-7 text-slate-400">
+                    A website with separate Home, About, Services
+                    and Contact pages based on your requirements.
+                </p>
+
+                <ul class="mb-8 space-y-3 text-sm text-slate-300">
+                    <li><span class="mr-2 text-cyan-400">✓</span>Multiple connected pages</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Consistent design</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Easy navigation</li>
+                </ul>
+
+                <a href="#contact" class="mt-auto block rounded-lg border border-cyan-400 px-4 py-3 text-center font-bold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950">
+                    Discuss Your Project →
+                </a>
+            </article>
+
+            <!-- SERVICE 5 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10 sm:p-7">
+
+                <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-3xl">
+                    🛠️
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold transition group-hover:text-cyan-400">
+                    Website Updates
+                </h3>
+
+                <p class="mb-6 leading-7 text-slate-400">
+                    Update existing website text, images, colors
+                    and layouts to keep your website fresh.
+                </p>
+
+                <ul class="mb-8 space-y-3 text-sm text-slate-300">
+                    <li><span class="mr-2 text-cyan-400">✓</span>Content and image updates</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Layout improvements</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Small visual fixes</li>
+                </ul>
+
+                <a href="#contact" class="mt-auto block rounded-lg border border-cyan-400 px-4 py-3 text-center font-bold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950">
+                    Discuss Your Project →
+                </a>
+            </article>
+
+            <!-- SERVICE 6 -->
+            <article class="group flex flex-col rounded-2xl border border-slate-800 bg-slate-900 p-6 transition duration-300 hover:-translate-y-2 hover:border-cyan-400 hover:shadow-xl hover:shadow-cyan-500/10 sm:p-7">
+
+                <div class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-400/20 bg-cyan-400/10 text-3xl">
+                    ✨
+                </div>
+
+                <h3 class="mb-3 text-xl font-bold transition group-hover:text-cyan-400">
+                    UI Improvement
+                </h3>
+
+                <p class="mb-6 leading-7 text-slate-400">
+                    Improve the visual appearance and usability
+                    of existing website sections and layouts.
+                </p>
+
+                <ul class="mb-8 space-y-3 text-sm text-slate-300">
+                    <li><span class="mr-2 text-cyan-400">✓</span>Better spacing and typography</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Consistent colors and styles</li>
+                    <li><span class="mr-2 text-cyan-400">✓</span>Improved mobile usability</li>
+                </ul>
+
+                <a href="#contact" class="mt-auto block rounded-lg border border-cyan-400 px-4 py-3 text-center font-bold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950">
+                    Discuss Your Project →
+                </a>
+            </article>
+
+        </div>
+
+        <!-- BOTTOM CALL TO ACTION -->
+        <div class="mt-14 rounded-2xl border border-cyan-400/20 bg-gradient-to-r from-cyan-400/10 via-slate-900 to-blue-500/10 px-6 py-9 text-left sm:px-10 sm:py-10">
+
+            <h3 class="text-2xl font-extrabold sm:text-3xl">
+                Have a Website <span class="text-cyan-400">Idea?</span>
+            </h3>
+
+            <p class="mt-4 max-w-xl leading-7 text-slate-400">
+                Tell me about your project. Let's find the right
+                website solution for your business.
+            </p>
+
+            <a href="#contact" class="mt-7 inline-flex items-center justify-center rounded-lg bg-cyan-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-cyan-300 sm:px-8">
+                Let's Talk About Your Project →
+            </a>
+
+        </div>
+
+    </div>
+</section>
+<!-- SERVICES SECTION END -->
+
+<!-- CONTACT SECTION START -->
+<section id="contact" class="relative scroll-mt-24 overflow-hidden bg-[#061321] py-16 text-white md:py-20 lg:py-24">
+
+    <!-- Background Glow -->
+    <div class="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-cyan-500/10 blur-[120px]"></div>
+    <div class="pointer-events-none absolute -right-40 bottom-10 h-80 w-80 rounded-full bg-blue-500/10 blur-[120px]"></div>
+
+    <div class="relative mx-auto w-full max-w-7xl px-5 md:px-8 lg:px-10">
+
+        <!-- SECTION HEADING -->
+        <div class="mb-12 max-w-3xl">
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.3em] text-cyan-400">
+                CONTACT ME
+            </p>
+
+            <h2 class="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">
+                Let's Build Something
+                <span class="text-cyan-400">Amazing</span>
+            </h2>
+
+            <p class="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+                Have a website idea or project in mind? Contact me to discuss
+                your requirements and create a modern, responsive website
+                for your business.
+            </p>
+        </div>
+
+        <!-- CONTACT CONTENT -->
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+
+            <!-- LEFT: CONTACT INFORMATION -->
+            <div class="flex flex-col gap-6">
+
+                <div class="rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 sm:p-8">
+                    <h3 class="text-2xl font-bold">
+                        Get In <span class="text-cyan-400">Touch</span>
+                    </h3>
+
+                    <p class="mt-3 leading-7 text-slate-400">
+                        Tell me about your project. I will be happy to discuss
+                        your website requirements.
+                    </p>
+
+                    <div class="mt-7 flex flex-col gap-4">
+
+                        <!-- EMAIL CARD -->
+                        <a href="mailto:warishalilaskar11051996@gmail.com"
+                           class="group flex items-start gap-4 rounded-xl border border-slate-700/70 bg-slate-900/50 p-4 transition hover:border-cyan-400/60">
+
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-2xl">
+                                ✉️
+                            </div>
+
+                            <div class="min-w-0">
+                                <h4 class="font-bold transition group-hover:text-cyan-400">
+                                    Email Address
+                                </h4>
+                                <p class="mt-2 break-all text-sm text-slate-400">
+                                    warishalilaskar11051996@gmail.com
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- GITHUB CARD -->
+                        <a href="https://github.com/Warishalilaskar"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="group flex items-start gap-4 rounded-xl border border-slate-700/70 bg-slate-900/50 p-4 transition hover:border-cyan-400/60">
+
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-2xl">
+                                💻
+                            </div>
+
+                            <div class="min-w-0">
+                                <h4 class="font-bold transition group-hover:text-cyan-400">
+                                    GitHub
+                                </h4>
+                                <p class="mt-2 break-all text-sm text-slate-400">
+                                    github.com/Warishalilaskar
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- LINKEDIN CARD -->
+                        <a href="https://linkedin.com/in/warish-ali-laskar-863994244"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="group flex items-start gap-4 rounded-xl border border-slate-700/70 bg-slate-900/50 p-4 transition hover:border-cyan-400/60">
+
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-2xl">
+                                🔗
+                            </div>
+
+                            <div class="min-w-0">
+                                <h4 class="font-bold transition group-hover:text-cyan-400">
+                                    LinkedIn
+                                </h4>
+                                <p class="mt-2 break-all text-sm text-slate-400">
+                                    linkedin.com/in/warish-ali-laskar-863994244
+                                </p>
+                            </div>
+                        </a>
+
+                        <!-- LOCATION CARD -->
+                        <div class="flex items-start gap-4 rounded-xl border border-slate-700/70 bg-slate-900/50 p-4">
+
+                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-2xl">
+                                📍
+                            </div>
+
+                            <div>
+                                <h4 class="font-bold">Location</h4>
+                                <p class="mt-2 text-sm leading-6 text-slate-400">
+                                    Shalika Bazar, Bagnar, Salika,
+                                    West Bengal 743355, India
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- QUICK CONTACT CTA -->
+                <div class="rounded-2xl border border-cyan-400/20 bg-gradient-to-r from-cyan-400/10 to-blue-500/10 p-6 sm:p-8">
+                    <p class="text-lg font-bold">
+                        Ready to start your project?
+                    </p>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-400">
+                        Send me an email and let's discuss your website idea.
+                    </p>
+
+                    <a href="mailto:warishalilaskar11051996@gmail.com"
+                       class="mt-5 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 font-bold text-slate-950 transition hover:bg-cyan-300">
+                        Email Me <span>↗</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- RIGHT: CONTACT FORM -->
+            <div class="rounded-2xl border border-slate-700/80 bg-[#0a1b2d] p-6 sm:p-8">
+
+                <h3 class="text-2xl font-bold">
+                    Send a <span class="text-cyan-400">Message</span>
+                </h3>
+
+                <p class="mt-3 text-sm leading-6 text-slate-400">
+                    Fill in the details below to prepare an email about your project.
+                </p>
+
+                <form id="contactForm" class="mt-7 space-y-5">
+
+                    <!-- NAME -->
+                    <div>
+                        <label for="contactName" class="mb-2 block text-sm font-semibold text-slate-300">
+                            Your Name
+                        </label>
+
+                        <input
+                            id="contactName"
+                            name="name"
+                            type="text"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                            class="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20">
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div>
+                        <label for="contactEmail" class="mb-2 block text-sm font-semibold text-slate-300">
+                            Your Email
+                        </label>
+
+                        <input
+                            id="contactEmail"
+                            name="email"
+                            type="email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                            class="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20">
+                    </div>
+
+                    <!-- SERVICE -->
+                    <div>
+                        <label for="contactService" class="mb-2 block text-sm font-semibold text-slate-300">
+                            What Do You Need?
+                        </label>
+
+                        <select
+                            id="contactService"
+                            name="service"
+                            required
+                            class="w-full rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3.5 text-white outline-none transition focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20">
+
+                            <option value="" disabled selected>
+                                Select a service
+                            </option>
+
+                            <option value="Business Website">Business Website</option>
+                            <option value="Landing Page Design">Landing Page Design</option>
+                            <option value="Responsive Website">Responsive Website</option>
+                            <option value="Multi-Page Website">Multi-Page Website</option>
+                            <option value="Website Updates">Website Updates</option>
+                            <option value="UI Improvement">UI Improvement</option>
+                            <option value="Other Project">Other Project</option>
+                        </select>
+                    </div>
+
+                    <!-- MESSAGE -->
+                    <div>
+                        <label for="contactMessage" class="mb-2 block text-sm font-semibold text-slate-300">
+                            Project Details
+                        </label>
+
+                        <textarea
+                            id="contactMessage"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell me about your website or project..."
+                            required
+                            class="w-full resize-y rounded-xl border border-slate-700 bg-slate-950/70 px-4 py-3.5 text-white outline-none transition placeholder:text-slate-500 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"></textarea>
+                    </div>
+
+                    <!-- STATUS -->
+                    <p id="contactFormStatus"
+                       class="hidden rounded-lg border border-cyan-400/20 bg-cyan-400/10 p-3 text-sm leading-6 text-cyan-300"
+                       role="status"
+                       aria-live="polite"></p>
+
+                    <!-- SUBMIT BUTTON -->
+                    <button
+                        type="submit"
+                        class="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-4 font-extrabold text-slate-950 transition hover:bg-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-[#0a1b2d]">
+                        Prepare Email <span>↗</span>
+                    </button>
+
+                    <p class="text-center text-xs leading-5 text-slate-500">
+                        Your email app will open. Review the message and press Send.
+                    </p>
+
+                </form>
+            </div>
+
+        </div>
+
+        <!-- GOOGLE MAP SECTION -->
+        <div class="mt-12 overflow-hidden rounded-2xl border border-cyan-400/30 bg-[#0a1b2d] shadow-xl shadow-cyan-500/5 md:mt-16">
+
+            <!-- MAP HEADER -->
+            <div class="flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-7">
+
+                <div>
+                    <p class="mb-2 text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">
+                        FIND MY LOCATION
+                    </p>
+
+                    <h3 class="text-xl font-extrabold sm:text-2xl">
+                        Find Me on <span class="text-cyan-400">Google Maps</span>
+                    </h3>
+
+                    <p class="mt-2 text-sm leading-6 text-slate-400">
+                        Shalika Bazar, Bagnar, Salika, West Bengal 743355
+                    </p>
+                </div>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Shalika+Bazar%2C+Bagnar%2C+Salika%2C+West+Bengal+743355"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex shrink-0 items-center justify-center gap-2 self-start rounded-xl border border-cyan-400/50 px-5 py-3 text-sm font-bold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950 sm:self-center">
+                    Open in Google Maps <span>↗</span>
+                </a>
+
+            </div>
+
+            <!-- RESPONSIVE MAP -->
+            <div class="relative h-[280px] w-full overflow-hidden sm:h-[350px] lg:h-[420px]">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.5323292476396!2d88.36675612358262!3d22.295698729689825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02691bd95bc009%3A0xe2abde7f27764a79!2sShalika%20Bazar%2C%20Bagnar%2C%20Salika%2C%20West%20Bengal%20743355!5e0!3m2!1sen!2sin!4v1792670861496!5m2!1sen!2sin"
+                    title="Google Maps - Shalika Bazar, Bagnar, Salika, West Bengal"
+                    class="absolute inset-0 h-full w-full border-0"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+
+            </div>
+
+            <!-- MAP FOOTER -->
+            <div class="flex flex-wrap items-center justify-between gap-3 border-t border-slate-700/70 px-5 py-4 sm:px-7">
+
+                <p class="text-sm text-slate-400">
+                    <span class="mr-2 text-cyan-400">●</span>
+                    Google Maps Location
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Shalika+Bazar%2C+Bagnar%2C+Salika%2C+West+Bengal+743355"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-sm font-semibold text-cyan-400 transition hover:text-cyan-300">
+                    Get Directions →
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--  CONTACT SECTION END  -->
+
+
+
+<!--  FOOTER SECTION START  -->
+<footer class="relative overflow-hidden border-t border-cyan-400/20 bg-[#061321] text-white">
+
+    <!-- Background Glow -->
+    <div class="pointer-events-none absolute -left-32 bottom-0 h-64 w-64 rounded-full bg-cyan-500/10 blur-[100px]"></div>
+    <div class="pointer-events-none absolute -right-32 top-0 h-64 w-64 rounded-full bg-blue-500/10 blur-[100px]"></div>
+
+    <div class="relative mx-auto w-full max-w-7xl px-5 md:px-8 lg:px-10">
+
+        <!-- MAIN FOOTER -->
+        <div class="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12 lg:py-16">
+
+            <!-- BRAND -->
+            <div class="sm:col-span-2 lg:col-span-1">
+
+                <a href="#home" class="inline-flex items-center gap-3">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-400/40 bg-cyan-400/10 text-2xl font-black text-cyan-400 shadow-lg shadow-cyan-500/10">
+                        W
+                    </span>
+
+                    <span class="text-xl font-extrabold tracking-wide">
+                        WARISH<span class="text-cyan-400">.</span>
+                    </span>
+                </a>
+
+                <p class="mt-5 max-w-sm text-sm leading-7 text-slate-400">
+                    Frontend Developer passionate about creating clean,
+                    modern and responsive websites using HTML, CSS,
+                    JavaScript and Tailwind CSS.
+                </p>
+
+                <div class="mt-6 flex flex-wrap gap-3">
+
+                    <a href="https://github.com/Warishalilaskar"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="GitHub"
+                       class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 text-lg font-bold text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950">
+                        GH
+                    </a>
+
+                    <a href="https://linkedin.com/in/warish-ali-laskar-863994244"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn"
+                       class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 text-lg font-bold text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950">
+                        in
+                    </a>
+
+                    <a href="mailto:warishalilaskar11051996@gmail.com"
+                       aria-label="Email"
+                       class="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-700 bg-slate-900/60 text-lg text-slate-300 transition hover:border-cyan-400 hover:bg-cyan-400 hover:text-slate-950">
+                        ✉
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- QUICK LINKS -->
+            <div>
+                <h3 class="text-base font-bold">
+                    Quick <span class="text-cyan-400">Links</span>
+                </h3>
+
+                <div class="mt-5 h-1 w-10 rounded-full bg-cyan-400"></div>
+
+                <ul class="mt-5 space-y-3 text-sm text-slate-400">
+                    <li>
+                        <a href="#home" class="inline-flex items-center gap-2 transition hover:translate-x-1 hover:text-cyan-400">
+                            <span class="text-cyan-400">›</span> Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about" class="inline-flex items-center gap-2 transition hover:translate-x-1 hover:text-cyan-400">
+                            <span class="text-cyan-400">›</span> About Me
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#skills" class="inline-flex items-center gap-2 transition hover:translate-x-1 hover:text-cyan-400">
+                            <span class="text-cyan-400">›</span> Skills
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services" class="inline-flex items-center gap-2 transition hover:translate-x-1 hover:text-cyan-400">
+                            <span class="text-cyan-400">›</span> Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects" class="inline-flex items-center gap-2 transition hover:translate-x-1 hover:text-cyan-400">
+                            <span class="text-cyan-400">›</span> Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="inline-flex items-center gap-2 transition hover:translate-x-1 hover:text-cyan-400">
+                            <span class="text-cyan-400">›</span> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- SERVICES -->
+            <div>
+                <h3 class="text-base font-bold">
+                    My <span class="text-cyan-400">Services</span>
+                </h3>
+
+                <div class="mt-5 h-1 w-10 rounded-full bg-cyan-400"></div>
+
+                <ul class="mt-5 space-y-3 text-sm text-slate-400">
+                    <li class="flex items-start gap-2">
+                        <span class="text-cyan-400">✓</span>
+                        Responsive Website Design
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <span class="text-cyan-400">✓</span>
+                        Landing Page Development
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <span class="text-cyan-400">✓</span>
+                        Business Websites
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <span class="text-cyan-400">✓</span>
+                        Website UI Improvements
+                    </li>
+
+                    <li class="flex items-start gap-2">
+                        <span class="text-cyan-400">✓</span>
+                        Website Updates
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div>
+                <h3 class="text-base font-bold">
+                    Contact <span class="text-cyan-400">Me</span>
+                </h3>
+
+                <div class="mt-5 h-1 w-10 rounded-full bg-cyan-400"></div>
+
+                <p class="mt-5 text-sm leading-7 text-slate-400">
+                    Have an idea for a website? Let's connect and discuss
+                    how I can help with your project.
+                </p>
+
+                <a href="mailto:warishalilaskar11051996@gmail.com"
+                   class="mt-5 inline-flex items-center gap-2 rounded-xl border border-cyan-400/40 bg-cyan-400/10 px-4 py-3 text-sm font-bold text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950">
+                    Let's Talk <span>↗</span>
+                </a>
+
+                <p class="mt-5 break-all text-sm text-slate-400">
+                    warishalilaskar11051996@gmail.com
+                </p>
+
+                <p class="mt-3 text-sm text-slate-400">
+                    <span class="mr-2 text-cyan-400">📍</span>
+                    West Bengal, India
+                </p>
+            </div>
+
+        </div>
+
+        <!-- FOOTER DIVIDER -->
+        <div class="border-t border-slate-700/70"></div>
+
+        <!-- BOTTOM FOOTER -->
+        <div class="flex flex-col items-center justify-between gap-4 py-6 text-center sm:flex-row sm:text-left">
+
+            <p class="text-sm text-slate-400">
+                © <span id="footerYear"></span>
+                <span class="font-semibold text-white">Warish Ali Laskar.</span>
+                All rights reserved.
+            </p>
+
+            <a href="#home"
+               class="group inline-flex items-center gap-2 rounded-lg border border-slate-700 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:border-cyan-400 hover:text-cyan-400">
+                Back to Top
+                <span class="transition group-hover:-translate-y-1">↑</span>
+            </a>
+
+            <p class="text-xs text-slate-500">
+                Built with <span class="font-semibold text-cyan-400">HTML & Tailwind CSS</span>
+            </p>
+
+        </div>
+
+    </div>
+</footer>
+<!-- FOOTER SECTION END  -->
+
+<!-- FOOTER YEAR SCRIPT -->
+<script>
+    const footerYear = document.getElementById("footerYear");
+
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
+</script>
+
+
+
+<script src="./script.js"></script>
+
+</body>
+</html>
