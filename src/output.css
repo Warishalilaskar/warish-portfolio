@@ -303,6 +303,9 @@
   .bottom-0 {
     bottom: 0px;
   }
+  .bottom-2 {
+    bottom: calc(var(--spacing) * 2);
+  }
   .bottom-5 {
     bottom: calc(var(--spacing) * 5);
   }
